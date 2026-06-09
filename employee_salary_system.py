@@ -26,7 +26,7 @@ class employeeSystem:
 
   def searchEmployee(self, employee_name):
     for employee in self.__employees:
-      if employee["Employee Name"].lower() == employee_name.lower():
+      if employee["employee name"].lower() == employee_name.lower():
         print("\nEmployee found in the system.")
         print(f"Employee Name: {employee["employee name"]}")
         print(f"Employee Position: {employee["employee position"]}")
@@ -35,3 +35,9 @@ class employeeSystem:
         return
       
       print("Employee not found in the system.")
+
+  def increaseSalary(self, employee_name, employee_salary):
+    pass
+
+  def countEmployees(self):
+    return len(self.__employees)
