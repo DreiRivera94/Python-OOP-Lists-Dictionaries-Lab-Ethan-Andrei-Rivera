@@ -40,8 +40,8 @@ class employeeSystem:
   def increaseSalary(self, employee_name, amount):
     for employee in self.__employees:
       if employee["employee name"].lower() == employee_name.lower():
-        amount = employee["employee salary"] + increase_salary
-        print(f"{employee_name}'s salary has been updated to {amount}")
+        employee ["employee salary"] += amount
+        print("employee salary: ", employee["employee salary"])
 
         return
       print("Employee not found in the system.")
@@ -58,7 +58,7 @@ employeeinfo = employeeSystem()
 number_of_employees = int(input("Enter a valid number of employees that you would like to add: "))
 
 for i in range(number_of_employees):
-  print(f"\nEnter employee {i + 1}")
+  print(f"Enter employee {i + 1}")
 
   employee_name = input("Enter employee's name: ")
   employee_position = input("Enter employee's position: ")
@@ -78,6 +78,8 @@ print("---------------")
 
 search_employee_name = input("Search for employee information in system: ")
 employeeinfo.searchEmployee(search_employee_name)
+
+print("---------------")
 
 print(f"Total employees: {employeeinfo.countEmployees()}") 
 
