@@ -14,7 +14,8 @@ class employeeSystem:
       print("Employee has been found in the system.")
 
     else:
-      print("\nEmployee Salary System")
+      print("Employee Salary System")
+
       print("---------------")
 
       for employee in self.__employees:
@@ -22,12 +23,10 @@ class employeeSystem:
         print(f"Employee Position: {employee["employee position"]}")
         print(f"Employee Salary: {employee["employee salary"]}")
 
-        print("---------------")
-
   def searchEmployee(self, employee_name):
     for employee in self.__employees:
       if employee["employee name"].lower() == employee_name.lower():
-        print("\nEmployee found in the system.")
+        print("Employee found in the system.")
         print(f"Employee Name: {employee["employee name"]}")
         print(f"Employee Position: {employee["employee position"]}")
         print(f"Employee Salary: {employee["employee salary"]}")
@@ -36,11 +35,23 @@ class employeeSystem:
       
       print("Employee not found in the system.")
 
-  def increaseSalary(self, employee_name, employee_salary):
-    pass
+      print("---------------")
+
+  def increaseSalary(self, employee_name, amount):
+    for employee in self.__employees:
+      if employee["employee name"].lower() == employee_name.lower():
+        amount = employee["employee salary"] + increase_salary
+        print(f"{employee_name}'s salary has been updated to {amount}")
+
+        return
+      print("Employee not found in the system.")
+
+      print("---------------")
 
   def countEmployees(self):
     return len(self.__employees)
+  
+  print("---------------")
   
 employeeinfo = employeeSystem()
 
@@ -57,7 +68,17 @@ for i in range(number_of_employees):
   
 employeeinfo.displayEmployees()
 
-search_employee_name = input("\n Search for employee information in system: ")
+print("---------------")
+
+increase_salary = float(input("Enter an amount to add to salary: "))
+
+employeeinfo.increaseSalary(employee_name, increase_salary)
+
+print("---------------")
+
+search_employee_name = input("Search for employee information in system: ")
 employeeinfo.searchEmployee(search_employee_name)
 
-print(f"\n Total employees: {employeeinfo.countEmployees()}") 
+print(f"Total employees: {employeeinfo.countEmployees()}") 
+
+print("---------------")
